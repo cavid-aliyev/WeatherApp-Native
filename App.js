@@ -1,25 +1,15 @@
-import { StatusBar } from "expo-status-bar";
+import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { Loading } from "./components";
+import getLocation from "./utils/getLocation";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <View style={styles.t1}></View>
-      <View style={styles.t2}></View>
-    </View>
-  );
-}
+  const [isLoading, setLoading] = React.useState(true);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  t1: {
-    flex: 1,
-    backgroundColor: "red",
-  },
-  t2: {
-    flex: 1,
-    backgroundColor: "green",
-  },
-});
+  React.useEffect(() => {
+    getLocation();
+    setLoading(false);
+  }, [getLocation]);
+
+  return isLoading ? <Loading /> : null;
+}
