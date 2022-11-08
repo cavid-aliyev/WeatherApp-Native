@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-const Loading = () => {
+const Loading: React.FC = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Getting weather api...</Text>

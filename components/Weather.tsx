@@ -1,7 +1,12 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-const Weather = ({ temp }) => {
+interface IWeather {
+  temp: number;
+  condition?: string;
+}
+
+const Weather: React.FC<IWeather> = ({ temp, condition }) => {
   return (
     <View style={styles.container}>
       <Text>Weatherrr {temp} C</Text>
