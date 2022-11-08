@@ -21,10 +21,10 @@ const App: React.FC = () => {
     } = await axios.get<weatherTypes>(
       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${api_key}&units=metric`
     );
-    const condition = "Clear";
+
     setLoading(false);
+    setCondition(weather[0]?.main);
     setTemp(temp);
-    setCondition(weather[0].main);
   };
 
   const getLocation = async () => {

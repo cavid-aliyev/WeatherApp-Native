@@ -32,3 +32,14 @@ export interface weatherTypes {
   weather: [{ description: string; icon: string; id: number; main: string }];
   wind: { deg: number; speed: number };
 }
+
+export interface weatherOptions {
+  Rain: {
+    iconName: any;
+    gradient: string[];
+  };
+  Snow: {
+    iconName: any;
+    gradient: string[];
+  };
+}

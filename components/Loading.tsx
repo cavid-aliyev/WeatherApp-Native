@@ -1,9 +1,10 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, StatusBar } from "react-native";
 
 const Loading: React.FC = () => {
   return (
     <View style={styles.container}>
+      <StatusBar barStyle="dark-content" />
       <Text style={styles.text}>Getting weather api...</Text>
     </View>
   );
